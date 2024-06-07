@@ -1,0 +1,20 @@
+# def databaseEmDjango():
+
+#     # Busca um campo do frontedn dentro do banco
+
+#     data = User.objects.get(pk='teste')
+
+
+#     # Trazer todos os objetos do banco de dados retorna um queryset
+#     data = User.objects.filter(user_age=25)
+
+#     objects = []
+#     for obj in data:
+#         objects.append()
+#     len(objects)
+    
+
+#     # Retornar todos os dados, mas os que não foi passado por parametro
+#     data = User.objects.exclude(user_age=25)
+#     data.save()
+#     data.delete()
