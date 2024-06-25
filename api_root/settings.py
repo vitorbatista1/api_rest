@@ -45,9 +45,10 @@ INSTALLED_APPS = [
 # AUTH_USER_MODEL = 'api_rest.MyUser'
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -132,10 +133,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 
-# Acessivel por qualquer ip
-# CORS_ORIGIN_ALLOW_ALL = True
-
+CORS_ALLOW_ALL_ORIGINS = True
 # Acessivel apenas do ip abaixo
-CORS_ALLOW_ORIGINS = [
-    'http://localhost:8080'
-]
+# CORS_ALLOW_ORIGINS = [
+#     'http://localhost:8080',
+#     'http://localhost:5173'
+# ]

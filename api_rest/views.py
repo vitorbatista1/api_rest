@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import UserSerializer, LoginSerializer
 from django.contrib.auth import login
+import datetime
+from django.http import HttpResponse
+
 
 
 @api_view(['POST'])
@@ -24,3 +27,11 @@ def user_login(request):
         login(request, user)
         return Response({"message": "Login successful"}, status=status.HTTP_200_OK)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def current_datetime(request):
+    now = datetime.datetime.now()
+    html = "<html><body> It is now %s.</body></html>" % now
+    return HttpResponse(html)
+
